@@ -1,0 +1,38 @@
+Initialization:
+
+The code begins by loading images from the 'frames' folder, which are used as different graphics (green light, red light, 
+kill screen, winner screen, intro screen).
+
+Intro Screen:
+
+An intro screen is displayed until the user presses 'q' to start the game.
+
+Game Setup:
+
+A timer is set for the game (45 seconds), a threshold for movement detection is defined, and the webcam is initialized
+for capturing video.
+
+Main Game Loop:
+
+The game alternates between showing a green light and a red light. When the green light is shown, the player can press 'w' to win.
+If the red light is shown, any significant movement detected will end the game.
+
+Movement Detection:
+
+During the red light phase, the current frame is compared to a reference frame to detect movement using frame differencing and 
+thresholding.
+
+Camera Feed Display:
+
+The webcam feed is displayed in a small window within the game screen, and the game screen is updated with the timer and 
+the light (green or red).
+
+Win or Lose Condition:
+
+If the player presses 'w' during the green light phase, they win, and the winner screen is displayed. If significant movement 
+is detected during the red light phase, the game ends with the kill screen.
+
+Game Termination:
+
+The game loop runs until the timer expires, the player wins, or movement is detected during the red light phase. The game 
+can be quit anytime by pressing 'q'. The appropriate screen (winner or kill) is shown until the user quits.
